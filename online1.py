@@ -67,12 +67,16 @@ if st.button("Predict"):
     
     
     if predicted_class == 1:
-        st.markdown(f"""<p style="font-size:24px;"><b>Based on feature values, predicted probability of complications after ALR is: {probability:.2f}%</b></p>""", unsafe_allow_html=True)
+        st.write(f"# Result：High Risk Postoperative Complications")
+        st.write(f"# Probability of High Risk Postoperative Complications Group: {predicted_proba}")
+        
+        # st.markdown(f"""<p style="font-size:24px;"><b>Based on feature values, predicted probability of complications after ALR is: {probability:.2f}%</b></p>""", unsafe_allow_html=True)
         advice = (
             f"According to our model, the patient has a high risk of postoperative complications following anatomical liver resection. "
             f"The model predicts that the patient’s probability of having postoperative complications is {probability:.2f}%. "
             "While this is just an estimate, it suggests that the patient may be at significant risk. "
         )
+        st.write(f"SHAP Force plot of CatBoost Model")
     else:
         st.markdown(f"""<p style="font-size:24px;"><b>Based on feature values, predicted probability of complications after ALR is: {predicted_proba[1] * 100:.2f}%</b></p>""", unsafe_allow_html=True)
         advice = (
