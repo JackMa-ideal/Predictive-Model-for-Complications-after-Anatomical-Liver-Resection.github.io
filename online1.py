@@ -64,18 +64,20 @@ if st.button("Predict"):
     probability = predicted_proba[predicted_class] * 100
     
     # Display prediction results
-    st.markdown(f"""<p style="font-size:24px;"><b>Based on feature values, predicted probability of complications after ALR is: {probability:.2f}%</b></p>""", unsafe_allow_html=True)
+    
     
     if predicted_class == 1:
+        st.markdown(f"""<p style="font-size:24px;"><b>Based on feature values, predicted probability of complications after ALR is: {probability:.2f}%</b></p>""", unsafe_allow_html=True)
         advice = (
-            f"According to our model, you have a high risk of postoperative complications following anatomical liver resection. "
-            f"The model predicts that your probability of having postoperative complications is {probability:.2f}%. "
-            "While this is just an estimate, it suggests that you may be at significant risk. "
+            f"According to our model, the patient has a high risk of postoperative complications following anatomical liver resection. "
+            f"The model predicts that the patient’s probability of having postoperative complications is {probability:.2f}%. "
+            "While this is just an estimate, it suggests that the patient may be at significant risk. "
         )
     else:
+        st.markdown(f"""<p style="font-size:24px;"><b>Based on feature values, predicted probability of complications after ALR is: {1-probability:.2f}%</b></p>""", unsafe_allow_html=True)
         advice = (
-            f"According to our model, you have a low risk of postoperative complications following anatomical liver resection. "
-            f"The model predicts that your probability of not having postoperative complications is {probability:.2f}%. "
+            f"According to our model, the patient has a low risk of postoperative complications following anatomical liver resection. "
+            f"The model predicts that the patient’s probability of not having postoperative complications is {probability:.2f}%. "
             "However, enhancing perioperative management is still very important. "
         )
     st.write(advice)
