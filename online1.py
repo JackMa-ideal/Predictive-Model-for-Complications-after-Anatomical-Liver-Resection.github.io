@@ -60,24 +60,23 @@ if st.button("Predict"):
     # Predict class and probabilities
     predicted_class = model.predict(features)[0]
     predicted_proba = model.predict_proba(features)[0]
-    
-    # Display prediction results
-    st.write(f"**Predicted Class:** {predicted_class}")
-    st.write(f"**Prediction Probabilities:** {predicted_proba}")
-    
+        
     # Generate advice based on prediction results
     probability = predicted_proba[predicted_class] * 100
+    
+    # Display prediction results
+    st.write(f"*Based on feature values, predicted probability of postoperative complications following anatomical liver resection is:* {probability:.2f}%")
     
     if predicted_class == 1:
         advice = (
             f"According to our model, you have a high risk of postoperative complications following anatomical liver resection. "
-            f"The model predicts that your probability of having postoperative complications is {probability:.1f}%. "
+            f"The model predicts that your probability of having postoperative complications is {probability:.2f}%. "
             "While this is just an estimate, it suggests that you may be at significant risk. "
         )
     else:
         advice = (
             f"According to our model, you have a low risk of postoperative complications following anatomical liver resection. "
-            f"The model predicts that your probability of not having postoperative complications is {probability:.1f}%. "
+            f"The model predicts that your probability of not having postoperative complications is {probability:.2f}%. "
             "However, enhancing perioperative management is still very important. "
         )
     st.write(advice)
