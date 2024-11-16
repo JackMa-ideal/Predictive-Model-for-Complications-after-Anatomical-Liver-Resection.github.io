@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 import shap
 import matplotlib.pyplot as plt
+from catboost import CatBoostClassifier
 
 # Load the model
 model = joblib.load('CatBoost.pkl')
