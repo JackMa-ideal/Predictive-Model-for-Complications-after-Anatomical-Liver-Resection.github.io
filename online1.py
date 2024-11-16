@@ -76,7 +76,7 @@ if st.button("Predict"):
         )
        
     else:
-        st.write(f"## Result: Low Risk Postoperative Complications")
+        st.write(f"### Result: Low Risk Postoperative Complications")
         st.write(f"### Probability of Low Risk Postoperative Complications Group: {predicted_proba[1] * 100:.2f}%")
         advice = (
             f"According to our model, the patient has a low risk of postoperative complications following anatomical liver resection. "
@@ -86,7 +86,7 @@ if st.button("Predict"):
     st.write(advice)
     
     # Calculate SHAP values and display force plot
-    st.write(f"**SHAP Force plot of CatBoost Model")
+    st.write(f"**SHAP Force plot of CatBoost Model**")
     explainer = shap.TreeExplainer(model)
     shap_values = explainer.shap_values(pd.DataFrame([feature_values], columns=feature_names))
 
