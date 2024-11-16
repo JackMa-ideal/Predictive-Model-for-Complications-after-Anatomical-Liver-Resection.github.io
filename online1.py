@@ -74,7 +74,7 @@ if st.button("Predict"):
             "While this is just an estimate, it suggests that the patient may be at significant risk. "
         )
     else:
-        st.markdown(f"""<p style="font-size:24px;"><b>Based on feature values, predicted probability of complications after ALR is: {1-probability:.2f}%</b></p>""", unsafe_allow_html=True)
+        st.markdown(f"""<p style="font-size:24px;"><b>Based on feature values, predicted probability of complications after ALR is: {predicted_proba[1] * 100:.2f}%</b></p>""", unsafe_allow_html=True)
         advice = (
             f"According to our model, the patient has a low risk of postoperative complications following anatomical liver resection. "
             f"The model predicts that the patient’s probability of not having postoperative complications is {probability:.2f}%. "
