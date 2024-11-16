@@ -65,7 +65,8 @@ if st.button("Predict"):
     probability = predicted_proba[predicted_class] * 100
     
     # Display prediction results
-    st.write(f"**Based on feature values, predicted probability of complications after ALR is:** {probability:.2f}%")
+    st.write(f"**Based on feature values, predicted probability of complications after ALR is:{probability:.2f}%** ")
+    st.markdown(f"""<p style="font-size:24px;"><b>Based on feature values, predicted probability of complications after ALR is:</b> {probability:.2f}%</p>""", unsafe_allow_html=True)
     
     if predicted_class == 1:
         advice = (
