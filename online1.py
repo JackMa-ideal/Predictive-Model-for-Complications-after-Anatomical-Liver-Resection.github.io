@@ -22,8 +22,7 @@ RALR_options = {
 }
 
 # Define feature names
-feature_names = [
-    "RALR", "Blood loss", "Surgical duration", "CHE", "BMI","PT", "AST", "Age"]
+feature_names = ["BMI","CHE", "Age", "RALR", "Blood loss", "Surgical duration", "PT", "AST"]
 
 # Streamlit user interface
 st.title("Predictive Model for Complications after Anatomical Liver Resection")
@@ -54,7 +53,7 @@ Age = st.number_input("Age:")
 
 
 # Process inputs and make predictions
-feature_values = [RALR, Blood_loss, Surgical_duration, CHE, BMI, PT, AST, Age]
+feature_values = [BMI, CHE, Age, RALR, Blood_loss, Surgical_duration, PT, AST]
 features = np.array([feature_values])
 
 if st.button("Predict"):
