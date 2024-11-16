@@ -22,7 +22,7 @@ RALR_options = {
 }
 
 # Define feature names
-feature_names = ["BMI","CHE", "Age", "RALR", "Blood loss", "Surgical duration", "PT", "AST"]
+feature_names = ["BMI","CHE", "Age", "RALR", "Blood_loss", "Surgical_duration", "PT", "AST"]
 
 # Streamlit user interface
 st.title("Predictive Model for Complications after Anatomical Liver Resection")
